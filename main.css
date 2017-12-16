@@ -1,19 +1,26 @@
+body {
+	background: #E0E0E2;
+}
 p {
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
     font-size: 2em;
-    padding-bottom: 0em;
+	color: #2D2E2E;
+
 }
 
 #list {
     font-size: 3em;
+	z-index: 1;
 }
 
 #crime {
     font-size: 10em; 
-    font-family: cursive; 
-    color: red; 
+    font-family: 'Source Sans Pro', sans-serif; 
+    color: #721817; 
     font-weight: 900;
     padding-top: 0em;
     text-align: center;
+	
+	z-index: 2;
 }
