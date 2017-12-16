@@ -1069,19 +1069,22 @@
 					-79.659172120999983,
 					43.775730535000037
 					];
+		//pos.long and pos.lat
+		longCov = 80.00
+		latCov = 111.045
 		// Set current location
 		var curLoc = [curLocLong, curLocLat];
-		// Set radius
-		var r = 1000000000000;
+		// Set radius, in kilometers
+		var r = 1;
 		document.getElementById("radius").innerHTML = r;
 		// Initialize square range
 		var squareRange = [];
 		// Scan thru and save all robbery points withing square range
 		for (var i = 0; i <= coords.length; i += 2) {
-			if (coords[i] < curLoc[0] + r 
-			&& coords[i] > curLoc[0] - r 
-			&& coords[i+1] < curLoc[1] + r 
-			&& coords[i+1] > curLoc[1] - r) {
+			if (coords[i] < curLoc[0] + (r / longCov)
+			&& coords[i] > curLoc[0] - (r / longCov)
+			&& coords[i+1] < curLoc[1] + (r / latCov) 
+			&& coords[i+1] > curLoc[1] - (r /latCov)) {
 				squareRange.push([coords[i], coords[i+1]]);
 			}
 		}
