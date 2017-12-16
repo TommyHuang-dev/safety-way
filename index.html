@@ -5,6 +5,7 @@
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -21,10 +22,11 @@
   </head>
   <body>
     <div id="map"></div>
-    <p>Your location is: <span id="list"></span></p>
- 
-    <p>Crimes within a <span id="radius"></span>km box around you:</p>
-    <p id="crime" style="font-size: 10em; font-family: cursive; color: red; font-weight: 900;"></p>
+    <p>Your location is: </p>
+    <p id="list"></p>
+    
+    <p>Danger level of area <span id="radius"></span> km radius around you...</p>
+    <p id="crime"></p>
 	
     <script>
       // Note: This example requires that you consent to location sharing when
