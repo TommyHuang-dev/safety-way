@@ -12,7 +12,7 @@
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
-        height: 100%;
+        height: 50%;
         margin: 0;
         padding: 0;
       }
@@ -20,6 +20,10 @@
   </head>
   <body>
     <div id="map"></div>
+    <p>Your location is:</p>
+    <p id="list"></p>
+    <p>Crimes within a 1km box around you:</p>
+    <p id="crime"></p>
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -40,7 +44,8 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-			console.log(pos.lng + "," + pos.lat);	
+            var output = pos.lat + ", " + pos.lng;
+			document.getElementById("list").innerHTML = output;
 			
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -66,5 +71,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNdShmcLizjhp734N3vKr1liGl_h7nm0&callback=initMap">
     </script>
+    
   </body>
 </html>
