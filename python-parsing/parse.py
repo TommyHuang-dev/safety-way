@@ -13,7 +13,7 @@ def parse_file(open_file):
 
 # get the entire file and read it
 file = open("../ROBBdata.json", "r")
-newfile = open("../parsed-data/robb", "w")
+newfile = open("../parsed-data/robb.txt", "w")
 parse_file(file)
 
 
