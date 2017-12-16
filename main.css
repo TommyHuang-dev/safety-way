@@ -1,4 +1,19 @@
 p {
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+    padding-bottom: 0em;
+}
+
+#list {
+    font-size: 3em;
+}
+
+#crime {
+    font-size: 10em; 
+    font-family: cursive; 
+    color: red; 
+    font-weight: 900;
+    padding-top: 0em;
+    text-align: center;
 }
