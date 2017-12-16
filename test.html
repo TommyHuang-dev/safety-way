@@ -40,7 +40,8 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
+			console.log(pos.lng + "," + pos.lat);	
+			
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
