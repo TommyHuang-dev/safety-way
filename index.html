@@ -1094,14 +1094,16 @@
 				squareRange.push([coords[i], coords[i+1]]);
 			}
 		}
-		console.log(squareRange.length);
 		
-		var robbCountSquareRange = squareRange.length;
-		document.getElementById("crime").innerHTML = robbCountSquareRange;
+		//square root value
+		var robbCountSquareRange = Math.floor(Math.sqrt(squareRange.length) * 10) /10;
 		
-		for (var i = 0; i <= squareRange.length; i += 1) {
-			console.log(squareRange[i]);
+		if (Math.floor(Math.sqrt(squareRange.length) * 10) /10 > 10) {
+			robbCountSquareRange = 10;
 		}
+		// output to webpage
+		document.getElementById("crime").innerHTML = robbCountSquareRange + "/10";
+		
 	}
 	  
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
