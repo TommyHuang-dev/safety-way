@@ -6,9 +6,9 @@ def parse_file(open_file):
     for line in open_file:
         cur_line = line.split()
         if cur_line[0] == '"x"':
-            newfile.write(cur_line[2][:-1] + "\n")
+            newfile.write(cur_line[2][:-1] + "," + "\n")
         elif cur_line[0] == '"y"':
-            newfile.write(cur_line[2] + "\n")
+            newfile.write(cur_line[2] + "," + "\n")
 
 
 # get the entire file and read it
