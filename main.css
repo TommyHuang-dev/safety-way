@@ -6,6 +6,7 @@ p {
 	font-family: 'Source Sans Pro', sans-serif;
     font-size: 2em;
 	color: #2D2E2E;
+	line-height: 5pt;
 
 }
 
@@ -24,6 +25,22 @@ p {
     text-align: center;
 	line-height: 0pt;
 	z-index: 2;
+}
+
+#crimeNumDiv {
+	font-size: 1em;
+	line-height: 30pt;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif; 
+	color: #404040;
+}
+
+#logo {
+	width: 60px;
+	height: 60px;
+    display: block;
+    margin: 0 auto;
+	padding-top: 20px;
 }
 
 #scaleBackground {
