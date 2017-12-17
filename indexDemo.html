@@ -26,16 +26,19 @@
     <p id="list"></p>
 
     <p>The danger level within <span id="radius"></span> km of your current position is:</p>
-	
+
 
 	<div id="crimeDiv">
 		<p id="crime"></p>
 	</div>
-	
+
 	<div id="scaleBackground">
 		<div id="scale"></div>
 	</div>
-
+	
+	<div>
+		There were <span id="crimeNum"></span> crimes committed within <span id="radius2"></span> km of you in the past year.
+	</div>
 
 
 	<div id="background"></div>
@@ -62,7 +65,7 @@
             };
             var output = pos.lat + ", " + pos.lng;
 			document.getElementById("list").innerHTML = output;
-			calcRobb(pos.lng, pos.lat);
+			calcRisk(pos.lng, pos.lat);
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -76,8 +79,8 @@
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
-	function calcRobb(curLocLong, curLocLat) {
-		// Set robbery coords
+	function calcRisk(curLocLong, curLocLat) {
+		// Set coords
     var coords = [];
     var squareRange = [];
     var xmlhttp = new XMLHttpRequest();
@@ -91,15 +94,17 @@
           // console.log(coords);
           longCov = 80.00
       		latCov = 111.045
-      		// Set current location
-            curLocLong = -79.716164;
+			curLocLong = -79.716164;
             curLocLat = 43.641391;
+      		// Set current location
       		var curLoc = [curLocLong, curLocLat];
       		// Set radius, in kilometers
       		var r = 1;
       		document.getElementById("radius").innerHTML = r;
+			document.getElementById("radius2").innerHTML = r;
+
       		// Initialize square range
-      		// Scan thru and save all robbery points withing square range
+      		// Scan thru and save all  points withing square range
           // console.log(coords);
           // console.log(curLoc);
 
@@ -113,55 +118,56 @@
       			}
       		}
           console.log(squareRange);
+		  document.getElementById("crimeNum").innerHTML = squareRange.length;
 
       		//square root value
-      		var robbCountSquareRange = Math.floor(Math.sqrt(squareRange.length) * 10) /10;
+      		var countSquareRange = Math.floor(Math.sqrt(squareRange.length) * 10) /10;
 
-		
+
 
       		if (Math.floor(Math.sqrt(squareRange.length) * 10) /10 > 10) {
-      			robbCountSquareRange = 10;
+      			countSquareRange = 10;
 
       		}
       		// output to webpage
-      		document.getElementById("crime").innerHTML = robbCountSquareRange + "/10";
-			
-			if (robbCountSquareRange > 0 && robbCountSquareRange <= 1) {
+      		document.getElementById("crime").innerHTML = countSquareRange + "/10";
+
+			if (countSquareRange > 0 && countSquareRange <= 1) {
 				document.getElementById("scale").style.width = "10%";
 			}
-			else if (robbCountSquareRange > 1 && robbCountSquareRange <= 2) {
+			else if (countSquareRange > 1 && countSquareRange <= 2) {
 				document.getElementById("scale").style.width = "20%";
 			}
-			else if (robbCountSquareRange > 2 && robbCountSquareRange <= 3) {
+			else if (countSquareRange > 2 && countSquareRange <= 3) {
 				document.getElementById("scale").style.width = "30%";
 			}
-			else if (robbCountSquareRange > 3 && robbCountSquareRange <= 4) {
+			else if (countSquareRange > 3 && countSquareRange <= 4) {
 				document.getElementById("scale").style.width = "40%";
 			}
-			else if (robbCountSquareRange > 4 && robbCountSquareRange <= 5) {
+			else if (countSquareRange > 4 && countSquareRange <= 5) {
 				document.getElementById("scale").style.width = "50%";
 			}
-			else if (robbCountSquareRange > 5 && robbCountSquareRange <= 6) {
+			else if (countSquareRange > 5 && countSquareRange <= 6) {
 				document.getElementById("scale").style.width = "60%";
 			}
-			else if (robbCountSquareRange > 6 && robbCountSquareRange <= 7) {
+			else if (countSquareRange > 6 && countSquareRange <= 7) {
 				document.getElementById("scale").style.width = "70%";
 			}
-			else if (robbCountSquareRange > 7 && robbCountSquareRange <= 8) {
+			else if (countSquareRange > 7 && countSquareRange <= 8) {
 				document.getElementById("scale").style.width = "80%";
 			}
-			else if (robbCountSquareRange > 8 && robbCountSquareRange <= 9) {
+			else if (countSquareRange > 8 && countSquareRange <= 9) {
 				document.getElementById("scale").style.width = "90%";
 			}
-			else if (robbCountSquareRange > 9 && robbCountSquareRange <= 10) {
+			else if (countSquareRange > 9 && countSquareRange <= 10) {
 				document.getElementById("scale").style.width = "100%";
 			}
-			
+
       }
 
     };
 
-    xmlhttp.open("GET", "https://burntpotatoes.github.io/safety-way/Crime Data/ROBBdata.json", true);
+    xmlhttp.open("GET", "https://burntpotatoes.github.io/safety-way/Crime%20Data/CrimeData.json", true);
 
     xmlhttp.send();
 		//pos.long and pos.lat
