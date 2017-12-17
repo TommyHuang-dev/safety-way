@@ -65,7 +65,7 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            var output = pos.lat + ", " + pos.lng;
+            var output = pos.lat + "°N, " + pos.lng + "°E";
 			document.getElementById("list").innerHTML = output;
 			calcRisk(pos.lng, pos.lat);
 
