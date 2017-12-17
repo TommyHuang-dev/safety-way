@@ -94,8 +94,8 @@
           }
 
           // console.log(coords);
-          longCov = 80.00
-      		latCov = 111.045
+          longCov = 80.00;
+      		latCov = 111.045;
       		// Set current location
       		var curLoc = [curLocLong, curLocLat];
       		// Set radius, in kilometers
@@ -131,37 +131,8 @@
       		}
       		// output to webpage
       		document.getElementById("crime").innerHTML = countSquareRange + "/10";
-
-			if (countSquareRange > 0 && countSquareRange <= 1) {
-				document.getElementById("scale").style.width = "10%";
-			}
-			else if (countSquareRange > 1 && countSquareRange <= 2) {
-				document.getElementById("scale").style.width = "20%";
-			}
-			else if (countSquareRange > 2 && countSquareRange <= 3) {
-				document.getElementById("scale").style.width = "30%";
-			}
-			else if (countSquareRange > 3 && countSquareRange <= 4) {
-				document.getElementById("scale").style.width = "40%";
-			}
-			else if (countSquareRange > 4 && countSquareRange <= 5) {
-				document.getElementById("scale").style.width = "50%";
-			}
-			else if (countSquareRange > 5 && countSquareRange <= 6) {
-				document.getElementById("scale").style.width = "60%";
-			}
-			else if (countSquareRange > 6 && countSquareRange <= 7) {
-				document.getElementById("scale").style.width = "70%";
-			}
-			else if (countSquareRange > 7 && countSquareRange <= 8) {
-				document.getElementById("scale").style.width = "80%";
-			}
-			else if (countSquareRange > 8 && countSquareRange <= 9) {
-				document.getElementById("scale").style.width = "90%";
-			}
-			else if (countSquareRange > 9 && countSquareRange <= 10) {
-				document.getElementById("scale").style.width = "100%";
-			}
+			
+			document.getElementById("scale").style.width = countSquareRange * 10 + "%";
 
       }
 
