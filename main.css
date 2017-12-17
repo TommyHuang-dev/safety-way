@@ -15,8 +15,8 @@ p {
 	z-index: 1;
 }
 
-#crime {
-    font-size: 10em; 
+#crimeDiv {
+    font-size: 5em; 
     font-family: 'Source Sans Pro', sans-serif; 
     color: #721817; 
     font-weight: 900;
@@ -24,4 +24,16 @@ p {
     text-align: center;
 	line-height: 0pt;
 	z-index: 2;
+}
+
+#scaleBackground {
+	height: 5px;
+	width: 100%;
+	background: #b3b3b3;
+}
+
+#scale {
+	height: 5px;
+	width: 100%;
+	background: #800000;
 }
