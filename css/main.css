@@ -1,5 +1,6 @@
 body {
 	background: #E0E0E2;
+    overflow: hidden;
 }
 p {
 	text-align: center;
@@ -20,9 +21,9 @@ p {
 	z-index: 1;
 }
 #crimeRatingDiv {
-    font-size: 5em; 
-    font-family: 'Source Sans Pro', sans-serif; 
-    color: #721817; 
+    font-size: 5em;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #721817;
     font-weight: 900;
     padding-top: 0em;
     text-align: center;
@@ -38,12 +39,17 @@ p {
 	height: 5px;
 	width: 100%;
 	background: #800000;
+
 }
 
 #crimeCountDiv {
+    /*position: absolute;*/
+    bottom: 0;
+    margin: auto;
 	font-size: 1em;
 	line-height: 30pt;
 	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif; 
+	font-family: 'Source Sans Pro', sans-serif;
 	color: #404040;
+
 }
