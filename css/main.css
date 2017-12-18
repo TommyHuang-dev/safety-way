@@ -9,14 +9,18 @@ p {
 	line-height: 5pt;
 
 }
-
-
-#list {
+#logo {
+	width: 60px;
+	height: 60px;
+    display: block;
+    margin: 0 auto;
+	padding-top: 20px;
+}
+#userLocation {
     font-size: 3em;
 	z-index: 1;
 }
-
-#crimeDiv {
+#crimeRatingDiv {
     font-size: 5em; 
     font-family: 'Source Sans Pro', sans-serif; 
     color: #721817; 
@@ -26,31 +30,21 @@ p {
 	line-height: 0pt;
 	z-index: 2;
 }
-
-#crimeNumDiv {
-	font-size: 1em;
-	line-height: 30pt;
-	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif; 
-	color: #404040;
-}
-
-#logo {
-	width: 60px;
-	height: 60px;
-    display: block;
-    margin: 0 auto;
-	padding-top: 20px;
-}
-
 #scaleBackground {
 	height: 5px;
 	width: 100%;
 	background: #b3b3b3;
 }
-
 #scale {
 	height: 5px;
 	width: 100%;
 	background: #800000;
+}
+
+#crimeCountDiv {
+	font-size: 1em;
+	line-height: 30pt;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif; 
+	color: #404040;
 }
