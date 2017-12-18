@@ -41,9 +41,11 @@ p {
 	background: #800000;
 
 }
-
 #crimeCountDiv {
-    /*position: absolute;*/
+	/*position: absolute;*/
+}
+#crimeCountText {
+    
     bottom: 0;
     margin: auto;
 	font-size: 1em;
@@ -51,5 +53,4 @@ p {
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: #404040;
-
 }

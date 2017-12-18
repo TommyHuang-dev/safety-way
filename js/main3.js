@@ -1,44 +1,40 @@
-function getUserLocation() {
-	// Get the location of the user using geolocation api, outputs it to #userLocation, and calls calcRisk
-	// Does not have any parameters
-	// Does not return anything
-	// 'borrowed and modified from an online source'
-	
- 	var output = document.getElementById("userLocation");
+// Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
 
-	
-  	if (!navigator.geolocation){
-		// If geolocation is not supported, tell the user (don't leave them hanging)
-   		output.innerHTML = "Geolocation is not supported by your browser";
-    	return;
-  	}
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var output = pos.lat + "°N, " + pos.lng + "°E";
+      document.getElementById("userLocation").innerHTML = output;
+      calcRisk(pos.lng, pos.lat);
 
- 	function success(position) {
-		// Geolocation works, so get the coordinates of the user position
-    	var latitude  = position.coords.latitude;
-    	var longitude = position.coords.longitude;
-		calcRisk(longitude, latitude);
-    	output.innerHTML = latitude + '° ' + longitude + '° ';
-  	}
-
-	function error() {
-		// Error in getting coordinates, e.g. user denies permission for location
-    	output.innerHTML = "<p>Unable to retrieve your location</p>";
-  	}
-	
-	// Loading message
-  	output.innerHTML = "<p>Locating…</p>";
-	
-	// Call the geolocation function
-  	navigator.geolocation.getCurrentPosition(success, error);
-}
-      
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
   function calcRisk(curLocLong, curLocLat) {
-		// Calculates the risk score to display to user. Takes data from Crime Data folder, uses square root function that models human danger perception.
-		// Parameters: user's current longitude and user's current latitude
-		// Does not return anything
-		
-    // Set coordinates
+    // Set coords
     var coords = [];
     var squareRange = [];
     var xmlhttp = new XMLHttpRequest();
@@ -100,8 +96,6 @@ function getUserLocation() {
   }
 
 function findDirection(squareRange, curLoc, latCov, longCov, r) {
-	// Searches for a safer location from the users current location, checking a 1km radius area 2km away in many directions
-	// Parameters: range of the search area, user's current location, converted latitude distance, converted longitude distance, r
     var northCoords = [];
     var southCoords = [];
     var eastCoords = [];
@@ -145,4 +139,10 @@ function findDirection(squareRange, curLoc, latCov, longCov, r) {
     }
 }
 
-window.onload = getUserLocation();
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
