@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
+  <head>
     <title>DangerSense</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -14,14 +13,14 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-    <!-- The DangerSense logo -->
-    <img id="logo" src="logo.png" alt="logo">
+  	<!-- The DangerSense logo -->
+	<img id="logo" src="logo.png" alt="logo">
 
-    <!-- The invisible map, to be removed later -->
+  	<!-- The invisible map, to be removed later -->
     <div id="map"></div>
 
     <!-- Display user location -->
@@ -30,27 +29,26 @@
 
     <p>The danger level within <span id="radius"></span> km of your current position is:</p>
 
-    <!-- Display the crime rating -->
-    <div id="crimeRatingDiv">
-        <p id="crimeRatingText"></p>
-    </div>
-    <!-- Visual indicator -->
-    <div id="scaleBackground">
-        <div id="scale"></div>
-    </div>
+	<!-- Display the crime rating -->
+	<div id="crimeRatingDiv">
+		<p id="crimeRatingText"></p>
+	</div>
+	<!-- Visual indicator -->
+	<div id="scaleBackground">
+		<div id="scale"></div>
+	</div>
 
     <!-- Show the number of crimes that occured -->
-    <div id="crimeCountDiv">
-        <p id="crimeCountText">There were <span id="crimeCount"></span> crimes committed within <span id="radius2"></span> km of you in the past year. </p>
-        <p id="crimeCountText">This project is still under development, and only works somewhat well in Peel and Toronto.</p>
-    </div>
+	<div id="crimeCountDiv">
+		<p id="crimeCountText">There were <span id="crimeCount"></span> crimes committed within <span id="radius2"></span> km of you in the past year. </p>
+		<p id="crimeCountText">This project is still under development, and only works somewhat well in Peel and Toronto.</p>
+	</div>
 
-    <script src="js/main.js"></script>
+	<script src="js/main.js"></script>
 
     <!--<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNdShmcLizjhp734N3vKr1liGl_h7nm0&callback=initMap">
-</script>-->
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNdShmcLizjhp734N3vKr1liGl_h7nm0&callback=initMap">
+    </script>-->
 
-</body>
-
+  </body>
 </html>
