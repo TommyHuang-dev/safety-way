@@ -1,25 +1,29 @@
 body {
-	background: #E0E0E2;
+    background: #E0E0E2;
     overflow: hidden;
 }
+
 p {
-	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2em;
-	color: #2D2E2E;
-	line-height: 5pt;
+    color: #2D2E2E;
+    line-height: 5pt;
 }
+
 #logo {
-	width: 60px;
-	height: 60px;
+    width: 60px;
+    height: 60px;
     display: block;
     margin: 0 auto;
-	padding-top: 20px;
+    padding-top: 20px;
 }
+
 #userLocation {
     font-size: 3em;
-	z-index: 1;
+    z-index: 1;
 }
+
 #crimeRatingDiv {
     font-size: 5em;
     font-family: 'Source Sans Pro', sans-serif;
@@ -27,30 +31,34 @@ p {
     font-weight: 900;
     padding-top: 0em;
     text-align: center;
-	line-height: 0pt;
-	z-index: 2;
+    line-height: 0pt;
+    z-index: 2;
 }
+
 #scaleBackground {
-	height: 5px;
-	width: 100%;
-	background: #b3b3b3;
+    height: 5px;
+    width: 100%;
+    background: #b3b3b3;
 }
+
 #scale {
-	height: 5px;
-	width: 100%;
-	background: #800000;
+    height: 5px;
+    width: 100%;
+    background: #800000;
 
 }
+
 #crimeCountDiv {
-	/*position: absolute;*/
+    /*position: absolute;*/
 }
+
 #crimeCountText {
-    
+
     bottom: 0;
     margin: auto;
-	font-size: 1em;
-	line-height: 30pt;
-	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif;
-	color: #404040;
+    font-size: 1em;
+    line-height: 30pt;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
 }
