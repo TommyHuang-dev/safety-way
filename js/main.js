@@ -68,7 +68,7 @@ function getUserLocation() {
               && coords[i].y > curLoc[1] - (r / latCov))
               {
 				//converts the square into a circle :D
-				if (Math.pow(coords[i].x - curLoc[0], 2) + Math.pow(coords[i].y - curLoc[1], 2) < Math.pow(r, 2)) {
+				if (Math.pow(coords[i].x - curLoc[0], 2) + Math.pow(coords[i].y - curLoc[1], 2) <= Math.pow(r, 2)) {
 					squareRange.push([coords[i].x, coords[i].y]);
 				}
             }
