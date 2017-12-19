@@ -60,26 +60,24 @@ function getUserLocation() {
       document.getElementById("radius2").innerHTML = r;
 
           // Initialize square range
-          // Scan thru and save all  points withing square range
-          // console.log(coords);
-          // console.log(curLoc);
-
+          // Scan thru and save all  points within square range
           for (var i = 0; i < coords.length; i++) {
             if (coords[i].x < curLoc[0] + (r / longCov)
               && coords[i].x > curLoc[0] - (r / longCov)
               && coords[i].y < curLoc[1] + (r / latCov)
               && coords[i].y > curLoc[1] - (r / latCov))
               {
-              squareRange.push([coords[i].x, coords[i].y]);
+				//converts the square into a circle :D
+				if (Math.pow(coords[i].x - curLoc[0], 2) + Math.pow(coords[i].y - curLoc[1], 2) < Math.pow(r, 2)) {
+					squareRange.push([coords[i].x, coords[i].y]);
+				}
             }
           }
-          console.log(squareRange);
+          console.log("num crimes: " + squareRange);
       document.getElementById("crimeCount").innerHTML = squareRange.length;
 
           //square root value
           var countSquareRange = Math.floor(Math.sqrt(squareRange.length) * 10) /10;
-
-
 
           if (Math.floor(Math.sqrt(squareRange.length) * 10) /10 > 10) {
             countSquareRange = 10;
