@@ -18,11 +18,16 @@ function getUserLocation() {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         calcRisk(longitude, latitude);
+        // Make the output display the coordinates, but everything is still hidden
         output.innerHTML = latitude + '° ' + longitude + '° ';
+
+        // Fade out the cover
+        $("#logo").fadeOut();
+
+        // Introduce the information
+        $("#hiddenBeforeClick").fadeIn();
         var info = document.getElementById("hiddenBeforeClick");
-        var logo = document.getElementById("logo");
-        info.style.display = "block";
-        logo.id = "smallLogo";
+
     }
 
     function error() {
