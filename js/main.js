@@ -4,7 +4,7 @@ function getUserLocation() {
     // Does not return anything
     // 'borrowed and modified from an online source'
 
-    var output = document.getElementById("userLocation");
+    var output = document.getElementById("userLocationCoordinates");
 
 
     if (!navigator.geolocation) {
@@ -19,11 +19,15 @@ function getUserLocation() {
         var longitude = position.coords.longitude;
         calcRisk(longitude, latitude);
         output.innerHTML = latitude + '° ' + longitude + '° ';
+        var info = document.getElementById("hiddenBeforeClick");
+        var logo = document.getElementById("logo");
+        info.style.display = "block";
+        logo.id = "smallLogo";
     }
 
     function error() {
         // Error in getting coordinates, e.g. user denies permission for location
-        output.innerHTML = "<p>Unable to retrieve your location</p>";
+        button.innerHTML = "<p>Unable to retrieve your location</p>";
     }
 
     // Loading message
@@ -31,6 +35,8 @@ function getUserLocation() {
 
     // Call the geolocation function
     navigator.geolocation.getCurrentPosition(success, error);
+
+
 }
 
 function calcRisk(curLocLong, curLocLat) {
@@ -138,5 +144,3 @@ function findDirection(squareRange, curLoc, latCov, longCov, r) {
         console.log("WEST");
     }
 }
-
-window.onload = getUserLocation();

@@ -30,34 +30,40 @@
 </head>
 
 <body>
+    <div class="center">
+        <div class="header">
+            <!-- The DangerSense logo, serves as button-->
+            <img id="logo" onclick="getUserLocation()" src="logo.png" alt="logo">
+        </div>
 
-    <!-- The DangerSense logo -->
-    <img id="logo" src="logo.png" alt="logo">
+        <br/>
 
-    <!-- The invisible map, to be removed later -->
-    <div id="map"></div>
+        <div id="hiddenBeforeClick">
 
-    <!-- Display user location -->
-    <p>Your location is: </p>
-    <p id="userLocation"></p>
+            <!-- Hidden radius -->
+            <span id="radius"></span>
 
-    <p>The danger level within <span id="radius"></span> km of your current position is:</p>
+            <p id="text"><strong>DangerSense</strong> rating of your current position:</p>
 
-    <!-- Display the crime rating -->
-    <div id="crimeRatingDiv">
-        <p id="crimeRatingText"></p>
+            <!-- Display user location -->
+            <p id="userLocationCoordinates"></p>
+
+            <!-- Display the crime rating -->
+            <div id="crimeRatingDiv">
+                <p id="crimeRatingText"></p>
+
+                <!-- Visual indicator -->
+                <div id="scaleBackground">
+                    <div id="scale"></div>
+                </div>
+            </div>
+            <!-- Show the number of crimes that occured -->
+            <div id="results">
+                <p id="crimeCountText">There were <span id="crimeCount"></span> crimes committed within <span id="radius2"></span> km of you in the past year. </p>
+                <p id="crimeCountText">This project is still under development, and only works somewhat well in Peel and Toronto.</p>
+            </div>
+        </div>
     </div>
-    <!-- Visual indicator -->
-    <div id="scaleBackground">
-        <div id="scale"></div>
-    </div>
-
-    <!-- Show the number of crimes that occured -->
-    <div id="crimeCountDiv">
-        <p id="crimeCountText">There were <span id="crimeCount"></span> crimes committed within <span id="radius2"></span> km of you in the past year. </p>
-        <p id="crimeCountText">This project is still under development, and only works somewhat well in Peel and Toronto.</p>
-    </div>
-
     <script src="js/main.js"></script>
 </body>
 

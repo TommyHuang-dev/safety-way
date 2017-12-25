@@ -11,17 +11,32 @@ p {
     line-height: 5pt;
 }
 
-#logo {
-    width: 60px;
+#smallLogo {
     height: 60px;
     display: block;
     margin: 0 auto;
     padding-top: 20px;
 }
 
-#userLocation {
-    font-size: 3em;
+
+#logo {
+    height: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+}
+
+#userLocationCoordinates {
+    font-size: 2em;
     z-index: 1;
+}
+
+#text {
+    font-size: 3em;
 }
 
 #crimeRatingDiv {
@@ -48,7 +63,7 @@ p {
 
 }
 
-#crimeCountDiv {
+#results {
     /*position: absolute;*/
 }
 
@@ -61,4 +76,21 @@ p {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     color: #404040;
+}
+
+#getLocationPrompt {
+    font-size: 5em;
+}
+
+.center {
+    text-align: center;
+}
+
+#hiddenBeforeClick {
+    display: none;
+
+}
+
+#radius {
+    display: none;
 }
